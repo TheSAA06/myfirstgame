@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Прогулка по городу</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style type="text/css">
+		.scoreTxtt{
+			position: absolute;
+			left: 0px;
+			top: 0px;
+		}
+		/*Кнопки движения*/
+		.buttonUp{
+			transition: 0.8s;
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			top: 750px;
+			left: 1690px;
+		}
+		.buttonDown{
+			transition: 0.8s;
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			top: 860px;
+			left: 1690px;
+		}
+		.buttonLeft{
+			transition: 0.8s;
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			top: 860px;
+			left: 1580px;
+		}
+		.buttonRight{
+			transition: 0.8s;
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			top: 860px;
+			left: 1800px;
+		}
+		/*Первая локация*/
+		.location1{
+			height: 970px;
+			transition: 0.8s;
+		}
+		/*Дома первой локации*/
+		.home11{
+			position: absolute;
+			top: 100px;
+			left: 200px;
+			height: 200px;
+			transition: 0.8s;
+			background-image: url(home1.png);
+			background-size: 100% 100%;
+		}
+		.home21{
+			position: absolute;
+			top: 600px;
+			left: 100px;
+			height: 300px;
+			transition: 0.8s;
+			background-image: url(home2.png);
+			background-size: 100% 100%;
+		}
+		.home31{
+			position: absolute;
+			top: 120px;
+			left: 1300px;
+			height: 230px;
+			transition: 0.8s;
+			background-image: url(home3.png);
+			background-size: 100% 100%;
+		}
+		.home41{
+			position: absolute;
+			top: 570px;
+			left: 1000px;
+			height: 320px;
+			transition: 0.8s;
+			background-image: url(home4.png);
+			background-size: 100% 100%;
+		}
+		.home21Up{
+			height: 970px;
+			display: none;
+			transition: 0.8s;
+		}
+		.home31Up{
+			height: 970px;
+			display: none;
+			transition: 0.8s;
+		}
+		.home41Up{
+			height: 970px;
+			display: none;
+			transition: 0.8s;
+		}
+		.trash{
+			height: 100px;
+			width: 100px;
+			position: absolute;
+			transition: 1s;
+			background-image: url(trash.jpg);
+			background-size: 100% 100%;
+		}
+		.trash2{
+			height: 100px;
+			width: 100px;
+			position: absolute;
+			transition: 1s;
+			background-image: url(trash.jpg);
+			background-size: 100% 100%;
+		}
+		.trash3{
+			height: 100px;
+			width: 100px;
+			position: absolute;
+			transition: 1s;
+			background-image: url(trash.jpg);
+			background-size: 100% 100%;
+		}
+		/*Офис последнего рубежа*/
+		.location3{
+			height: 970px;
+			display: none;
+			transition: 0.8s;
+		}
+		.home13{
+			position: absolute;
+			top: 100px;
+			left: 200px; 
+			height: 200px;
+			transition: 0.8s;
+		}
+		.home13Up{
+			display: none;
+			height: 970px;
+			transition: 0.8s;
+		}
+		.office{
+			position: absolute;
+			top: 0px;
+			left: 1600px;
+			height: 1000px;
+			transition: 0.8s;
+		}
+		.officeUp{
+			height: 970px;
+			display: none;
+			transition: 0.8s;
+		}
+		.getCard{
+			margin-top: 80px;
+			margin-left: 130px;
+		}
+		.boss{
+			position: absolute;
+			top: 120px;
+			left: 1300px;
+			transition: 0.8s;
+			height: 300px;
+			width: 200px;
+		}
+		.udar{
+			margin-top: 80px;
+			margin-left: 130px;
+		}
+		/*Основной игрок*/
+		.main-player{
+			position: absolute;
+			transition: 0.8s;
+			height: 100px;
+			width: 80px;
+			background-image: url(player.png);
+			background-size: 100% 100%;
+		}
+	</style>
+</head>
+<body>
+	<!--Первая локация-->
+	<div class="col-12 bg-success location1">
+		<!--Дома первой локации-->
+		<div class="col-2 home11"></div>
+		<div class="col-2 home21"></div>
+		<div class="col-2 home31"></div>
+		<div class="col-2 home41"></div>
+	</div>
+	<div class="home21Up col-12 bg-danger">
+		<div class="trash bg-success"></div>
+		<div class="trash bg-success"></div>
+		<div class="trash bg-success"></div>
+		<div class="trash bg-success"></div>
+		<div class="trash bg-success"></div>
+	</div>
+	<div class="home31Up col-12 bg-danger">
+		<div class="trash2 bg-success"></div>
+		<div class="trash2 bg-success"></div>
+		<div class="trash2 bg-success"></div>
+		<div class="trash2 bg-success"></div>
+		<div class="trash2 bg-success"></div>
+	</div>
+	<div class="home41Up col-12 bg-danger">
+		<div class="trash3 bg-success"></div>
+		<div class="trash3 bg-success"></div>
+		<div class="trash3 bg-success"></div>
+		<div class="trash3 bg-success"></div>
+		<div class="trash3 bg-success"></div>
+	</div>
+	<!--Третья локация-->
+	<div class="col-12 bg-success location3">
+		<div class="home13 col-3 bg-warning">
+			<button class="btn getCard">ПОЛУЧИТЬ КАРТУ</button>
+		</div>
+		<div class="office col-5 bg-warning"></div>
+	</div>
+	<div class="officeUp col-12 bg-warning">
+		<div class="boss bg-success"></div>
+		<button class="btn btn-primary udar">БИТЬ БОССА</button>
+	</div>
+	<!--Человечек-->
+	<div class="main-player" style="top: 200px; left: 400px;"></div>
+	<h1 class="scoreTxtt">Уважения: <span class="scoreTxt"></span></h1>
+	<button class="cheat">PUSH</button>
+	<!--Кнопки движения-->
+	<button class="buttonUp bg-secondary"></button>
+	<button class="buttonDown bg-secondary"></button>
+	<button class="buttonRight bg-secondary"></button>
+	<button class="buttonLeft bg-secondary"></button>
+	<!--Скрипт-->
+	<script type="text/javascript">
+		//Прочее
+		let location11 = 1;
+		let score = 0;
+		let scoreTxtt = document.querySelector('.scoreTxtt');
+		let scoreTxt = document.querySelector('.scoreTxt');
+		scoreTxt.innerHTML = score;
+		//Основной человечек
+		let player = document.querySelector('.main-player');
+		let playerTop = 200;
+		let playerLeft = 400;
+		//Дома первой локации
+		let location1 = document.querySelector('.location1');
+		let home11 = document.querySelector('.home11');
+		let home21 = document.querySelector('.home21');
+		let home31 = document.querySelector('.home31');
+		let home41 = document.querySelector('.home41');
+		let home21Up = document.querySelector('.home21Up');
+		let home31Up = document.querySelector('.home31Up');
+		let home41Up = document.querySelector('.home41Up');
+		let trash = document.querySelectorAll('.trash');
+		let trash1 = document.querySelectorAll('.trash1');
+		let trash2 = document.querySelectorAll('.trash2');
+		let trashScore = 0;
+		//Дома второй локации
+		//Третья локация
+		let location3 = document.querySelector('.location3');
+		let home13 = document.querySelector('.home13');
+		let home13Up = document.querySelector('.home13Up')
+		let office = document.querySelector('.office');
+		let officeUp = document.querySelector('.officeUp');
+		let getCard = document.querySelector('.getCard');
+		let udar = document.querySelector('.udar');
+		let card = 0;
+		let clicks = 0;
+		//Кнопки движения
+		let buttonUp = document.querySelector('.buttonUp');
+		let buttonDown = document.querySelector('.buttonDown');
+		let buttonRight = document.querySelector('.buttonRight');
+		let buttonLeft = document.querySelector('.buttonLeft');
+		let cheat = document.querySelector('.cheat');
+		cheat.onclick = function() {
+			score = score + 1;
+			scoreTxt.innerHTML = score;
+		}
+		//Рандомизатор
+		let randLeft = function() {
+			let num = Math.random() * 1780;
+			let roundNum = Math.round(num);
+			return roundNum;
+		}
+		let randTop = function() {
+			let num = Math.random() * 870;
+			let roundNum = Math.round(num);
+			return roundNum;
+		}
+		//Скрипт
+		//Скрипт кнопок движения
+		buttonUp.onclick = function() {
+			playerTop = playerTop - 80;
+			player.style.top = playerTop + 'px';
+			if (score == 3) {
+				location1.style.display = 'none';
+				location3.style.display = 'block';
+				playerLeft = 20;
+				player.style.left = playerLeft + 'px';
+				console.log('привет');
+				score = 0;
+				scoreTxtt.style.display = 'none';
+			}
+			if (playerLeft == 1520) {
+				if (card == 1) {
+					location3.style.display = 'none';
+					officeUp.style.display = 'block';
+					playerLeft = 20;
+					playerTop = 500;
+					player.style.left = playerLeft + 'px';
+					player.style.Top = playerTop + 'px';
+					alert('Успей за 10 секунд ударить босса 30 раз. Для интриги времени и количества кликов не будет видно');
+					let time = function() {
+						timer = timer + 1;
+					}
+					setInterval(time, 1000);
+				}
+			}
+		};
+		buttonDown.onclick = function() {
+			playerTop = playerTop + 80;
+			player.style.top = playerTop + 'px';
+			if (score == 3) {
+				location1.style.display = 'none';
+				location3.style.display = 'block';
+				playerLeft = 20;
+				player.style.left = playerLeft + 'px';
+				console.log('привет');
+				score = 0;
+				scoreTxtt.style.display = 'none';
+			}
+			if (playerLeft == 1520) {
+				if (card == 1) {
+					location3.style.display = 'none';
+					officeUp.style.display = 'block';
+					playerLeft = 20;
+					playerTop = 500;
+					player.style.left = playerLeft + 'px';
+					player.style.Top = playerTop + 'px';
+					alert('Успей за 10 секунд ударить босса 30 раз. Для интриги времени и количества кликов не будет видно');
+					let time = function() {
+						timer = timer + 1;
+					}
+					setInterval(time, 1000);
+				}
+			}
+		};
+		buttonRight.onclick = function() {
+			playerLeft = playerLeft + 60;
+			player.style.left = playerLeft + 'px';
+			if (score == 3) {
+				location1.style.display = 'none';
+				location3.style.display = 'block';
+				playerLeft = 20;
+				player.style.left = playerLeft + 'px';
+				console.log('привет');
+				score = 0;
+				scoreTxtt.style.display = 'none';
+			}
+			if (playerLeft == 1520) {
+				if (card == 1) {
+					location3.style.display = 'none';
+					officeUp.style.display = 'block';
+					playerLeft = 20;
+					playerTop = 500;
+					player.style.left = playerLeft + 'px';
+					player.style.Top = playerTop + 'px';
+					alert('Успей за 10 секунд ударить босса 30 раз. Для интриги времени и количества кликов не будет видно');
+					let time = function() {
+						timer = timer + 1;
+					}
+					setInterval(time, 1000);
+				}
+			}
+		};
+		buttonLeft.onclick = function() {
+			playerLeft = playerLeft - 60;
+			player.style.left = playerLeft + 'px';
+			if (score == 3) {
+				location1.style.display = 'none';
+				location2.style.display = 'none';
+				location3.style.display = 'block';
+				playerLeft = 20;
+				player.style.left = playerLeft + 'px';
+				console.log('привет');
+				score = 0;
+				scoreTxtt.style.display = 'none';
+			}
+			if (playerLeft == 1520) {
+				if (card == 1) {
+					location3.style.display = 'none';
+					officeUp.style.display = 'block';
+					playerLeft = 20;
+					playerTop = 500;
+					player.style.left = playerLeft + 'px';
+					player.style.Top = playerTop + 'px';
+					alert('Успей за 10 секунд ударить босса 30 раз. Для интриги времени и количества кликов не будет видно');
+					let time = function() {
+						timer = timer + 1;
+					}
+					setInterval(time, 1000);
+				}
+			}
+		};
+		let boxs = {
+			left : randLeft() + "px",
+			top : randTop() + "px"
+		}
+		home21.onclick = function() {
+			location1.style.display = 'none';
+			home21Up.style.display = 'block';
+			alert('Убери мусор');
+			for (var i = 0; i < 4; i++) {
+				trash[i].style.left = boxs.left;
+				trash[i].style.top = boxs.top;
+				trash[i].onclick = function() {
+					trashScore = trashScore + 1;
+					trash[i].style.display = 'none';
+					if (trashScore == 5) {
+						score = score + 1;
+						scoreTxt.innerHTML = score;
+						home21Up.style.display = 'none';
+						location1.style.display = 'block';
+					}
+				}
+			}
+		}
+		home31.onclick = function() {
+			location1.style.display = 'none';
+			home31Up.style.display = 'block';
+			alert('Убери мусор');
+			for (var i = 0; i < 4; i++) {
+				trash2[i].style.left = boxs.left;
+				trash2[i].style.top = boxs.top;
+				trash2[i].onclick = function() {
+					trashScore = trashScore + 1;
+					trash2[i].style.display = 'none';
+					if (trashScore == 5) {
+						score = score + 1;
+						scoreTxt.innerHTML = score;
+						home31Up.style.display = 'none';
+						location1.style.display = 'block';
+					}
+				}
+			}
+		}
+		home41.onclick = function() {
+			location1.style.display = 'none';
+			home41Up.style.display = 'block';
+			alert('Убери мусор');
+			for (var i = 0; i < 4; i++) {
+				trash3[i].style.left = boxs.left;
+				trash3[i].style.top = boxs.top;
+				trash3[i].onclick = function() {
+					trashScore = trashScore + 1;
+					trash3[i].style.display = 'none';
+					if (trashScore == 5) {
+						score = score + 1;
+						scoreTxt.innerHTML = score;
+						home41Up.style.display = 'none';
+						location1.style.display = 'block';
+					}
+				}
+			}
+		}
+		udar.onclick = function() {
+			clicks++;
+			if (clicks == 30) {
+				alert('Ты победил');
+				console.log('Ты победил');
+				location3.style.display = 'none';
+				location1.style.display = 'block';
+			}
+		}
+		//Третья локация
+		getCard.onclick = function() {
+			card++;
+			if (card == 1) {
+				alert('Ты получил карту');
+			}
+			if (card == 2) {
+				alert('Все ты сломал игру, перезапускай ее!!!');
+			}
+		}
+
+	</script>
+</body>
+</html>
