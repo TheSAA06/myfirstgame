@@ -164,6 +164,8 @@
 			transition: 0.8s;
 			height: 300px;
 			width: 200px;
+			background-image: url(starik.png);
+			background-size: 100% 100%;
 		}
 		.udar{
 			margin-top: 80px;
@@ -218,7 +220,7 @@
 		<div class="office col-5 bg-warning"></div>
 	</div>
 	<div class="officeUp col-12 bg-warning">
-		<div class="boss bg-success"></div>
+		<div class="boss"></div>
 		<button class="btn btn-primary udar">БИТЬ БОССА</button>
 	</div>
 	<!--Человечек-->
@@ -410,7 +412,7 @@
 			location1.style.display = 'none';
 			home21Up.style.display = 'block';
 			alert('Убери мусор');
-			for (var i = 0; i < 4; i++) {
+			for (let i = 0; i < 4; i++) {
 				trash[i].style.left = boxs.left;
 				trash[i].style.top = boxs.top;
 				trash[i].onclick = function() {
@@ -429,7 +431,7 @@
 			location1.style.display = 'none';
 			home31Up.style.display = 'block';
 			alert('Убери мусор');
-			for (var i = 0; i < 4; i++) {
+			for (let i = 0; i < 4; i++) {
 				trash2[i].style.left = boxs.left;
 				trash2[i].style.top = boxs.top;
 				trash2[i].onclick = function() {
@@ -448,7 +450,7 @@
 			location1.style.display = 'none';
 			home41Up.style.display = 'block';
 			alert('Убери мусор');
-			for (var i = 0; i < 4; i++) {
+			for (let i = 0; i < 4; i++) {
 				trash3[i].style.left = boxs.left;
 				trash3[i].style.top = boxs.top;
 				trash3[i].onclick = function() {
@@ -470,6 +472,7 @@
 				console.log('Ты победил');
 				location3.style.display = 'none';
 				location1.style.display = 'block';
+				alert('Продолжение следует, жди обновлений')
 			}
 		}
 		//Третья локация
@@ -482,7 +485,6 @@
 				alert('Все ты сломал игру, перезапускай ее!!!');
 			}
 		}
-
 	</script>
 </body>
 </html>
